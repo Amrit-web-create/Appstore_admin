@@ -35,6 +35,7 @@ details summary{cursor:pointer}details[open] summary{margin-bottom:10px}
 .sw input[type=checkbox]{width:100%;height:100%;margin:0}
 .tgl{width:54px;height:30px;border:2px solid var(--k);border-radius:20px;background:#fff;position:relative;cursor:pointer;flex:none;padding:0;transition:.2s}.tgl:after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--k);transition:.2s}.tgl.on{background:var(--ok)}.tgl.on:after{left:27px;background:#fff}
 .fi{display:block;width:100%;margin:4px 0 10px;padding:8px;background:#fff;border:2px solid var(--k);border-radius:12px;font:600 13px Sora,sans-serif}.fi::file-selector-button{border:2px solid var(--k);background:var(--k);color:var(--bg);border-radius:10px;padding:8px 14px;margin-right:10px;font:800 13px Sora,sans-serif;cursor:pointer}
+.vh{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden}
 </style></head><body><div id="t"></div><div id="app"></div>
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
@@ -54,7 +55,7 @@ const liveData=v=>({liveVersionId:v.id,liveVersionName:v.versionName,liveUrl:v.g
 const noLive={liveVersionId:"",liveVersionName:"",liveUrl:"",liveSize:"",liveLog:""};
 const clean=o=>JSON.parse(JSON.stringify(o));
 const close=()=>$("#md")?.remove();
-const modal=h=>{close();const d=document.createElement("div");d.className="md";d.id="md";d.innerHTML=`<div>${h}</div>`;d.onclick=e=>e.target===d&&close();document.body.append(d)};
+const modal=h=>{close();const d=document.createElement("div");d.className="md";d.id="md";d.innerHTML=`<div>${h}</div>`;d.addEventListener("click",e=>{if(e.target===d)close()});document.body.append(d)};
 const f=(l,i,v="",t="text")=>`<label class="fl">${l}<input id="f_${i}" type="${t}" value="${esc(v)}"></label>`;
 const g=i=>$("#f_"+i).value.trim();
 
@@ -94,9 +95,9 @@ function editor(id){const a=id?{...apps.find(x=>x.id==id)}:{status:"published",d
 ed={id,a,icon:null,iu:null,shots:[],su:[],rm:[],step:1,v:{id:lv?.id,url:lv?.githubUrl||"",vn:lv?.versionName||"1.0",size:lv?.fileSize||"",log:lv?.changelog||""}};wz()}
 function wz(){const a=ed.a,v=ed.v,s=ed.step;
 modal(`<div class="stp"><i class="on"></i><i class="${s>1?"on":""}"></i><i class="${s>2?"on":""}"></i></div><h2>${ed.id?"Edit app":"New app"} · Step ${s} of 3</h2>`+(s==1?`${f("App name *","name",a.name)}${f("Download link * (GitHub release APK)","url",v.url,"url")}${f("Version","vn",v.vn)}${f("Short description","shortDesc",a.shortDesc)}<label class="fl">Full description<textarea id="f_description" style="min-height:170px">${esc(a.description)}</textarea></label>
-<button class="btn k" style="width:100%;padding:13px" onclick="A.nx()">Continue <i class="fa-solid fa-arrow-right"></i></button><button class="btn" style="width:100%;margin-top:8px" onclick="A.close()">Cancel</button>`:s==2?`<div class="fl">App icon *</div><div class="icp"><div id="icv">${ed.iu||a.iconId?`<img src="${ed.iu||img(a.iconId)}">`:'<span><i class="fa-solid fa-image fa-2x"></i><br>Icon yahan dikhega</span>'}</div></div>
-<div class="m">Gallery se chuno:</div><input type="file" class="fi" accept="image/*" onchange="A.pi(this)"><div class="m">Ya Files (Internal storage) se:</div><input type="file" class="fi" onchange="A.pi(this)">${f("Ya icon ka link paste karo (optional)","iconlink",a.iconlink,"url")}
-<div class="fl" style="margin-top:8px">Screenshots</div><div class="m">Gallery se (kai chun sakte ho):</div><input type="file" class="fi" accept="image/*" multiple onchange="A.ps(this)"><div class="m">Ya Files se:</div><input type="file" class="fi" multiple onchange="A.ps(this)"><div class="th" id="th" style="margin:4px 0 12px">${ths()}</div>
+<button class="btn k" style="width:100%;padding:13px" onclick="A.nx()">Continue <i class="fa-solid fa-arrow-right"></i></button><button class="btn" style="width:100%;margin-top:8px" onclick="A.close()">Cancel</button>`:s==2?`<div class="fl">App icon *</div><div class="icp" onclick="A.pick('icg')"><div id="icv">${ed.iu||a.iconId?`<img src="${ed.iu||img(a.iconId)}">`:'<span><i class="fa-solid fa-image fa-2x"></i><br>Icon yahan dikhega</span>'}</div></div>
+<div class="rw" style="margin-bottom:8px"><button class="btn" onclick="A.pick('icg')"><i class="fa-solid fa-images"></i> Gallery</button><button class="btn" onclick="A.pick('icf')"><i class="fa-solid fa-folder-open"></i> Files</button></div><input type="file" id="icg" class="vh" accept="image/*" onchange="A.pi(this)"><input type="file" id="icf" class="vh" onchange="A.pi(this)">${f("Ya icon ka link paste karo (optional)","iconlink",a.iconlink,"url")}
+<div class="fl" style="margin-top:8px">Screenshots</div><div class="rw"><button class="btn" onclick="A.pick('shg')"><i class="fa-solid fa-plus"></i> Add screenshots</button><button class="btn" onclick="A.pick('shf')"><i class="fa-solid fa-folder-open"></i> Files</button></div><input type="file" id="shg" class="vh" accept="image/*" multiple onchange="A.ps(this)"><input type="file" id="shf" class="vh" multiple onchange="A.ps(this)"><div class="th" id="th" style="margin:4px 0 12px">${ths()}</div>
 <label class="fl">Ya screenshot links (har line mein ek)<textarea id="f_shlinks">${esc(a.shlinks)}</textarea></label>
 ${f("Play Store link","playStoreUrl",a.playStoreUrl,"url")}<h3>Support details</h3>${f("Contact email","contactEmail",a.contactEmail,"email")}${f("Support email","supportEmail",a.supportEmail,"email")}${f("Privacy policy link","privacyUrl",a.privacyUrl,"url")}
 <div class="rw"><button class="btn" onclick="A.bk()"><i class="fa-solid fa-arrow-left"></i> Back</button><button class="btn k fx" style="padding:13px" onclick="A.nx()">Continue <i class="fa-solid fa-arrow-right"></i></button></div>`:`<h3 style="margin-top:0"><i class="fa-solid fa-sliders"></i> More options</h3>${f("App link name (khali = naam se auto)","slug",a.slug)}${f("Category","category",a.category)}${f("File size (18 MB)","size",v.size)}${f("Rating (0-5)","rating",a.rating,"number")}${f("Downloads jo site par dikhenge","downloadShown",a.downloadShown,"number")}<div class="m" style="margin:-4px 0 10px">Asli count: <b>${num(a.downloadReal)}</b> <button class="btn" onclick="$('#f_downloadShown').value=${a.downloadReal||0}">Shown = Real</button></div>${f("Order number (chhota pehle)","sortOrder",a.sortOrder,"number")}
@@ -120,6 +121,7 @@ const A=window.A={ed:null,close,sl:slug,go:t=>{tab=t;render()},s:v=>{q=v;$("#lst
  cp(s){let b=localStorage.getItem("base")||prompt("App store site ka URL (jaise https://mystore.pages.dev)");if(!b)return;b=b.replace(/\/$/,"");localStorage.setItem("base",b);navigator.clipboard.writeText(b+"/app/"+s);toast("Link copy ho gaya")},
  edit(id){editor(id)},
  mo(){const e=$("#mo");e.style.display=e.style.display=="none"?"block":"none"},
+ pick(id){const i=$("#"+id);if(!i)return;try{if(i.showPicker){i.showPicker();return}}catch(e){}i.click()},
  tg(b){b.classList.toggle("on")},
  nx(){cl();if(ed.step==1&&!ed.a.name)return toast("App name likho");ed.step++;wz()},bk(){cl();ed.step--;wz()},
  pi(i){const f=i.files[0];i.value="";if(!f)return;if(!okImg(f))return toast("PNG, JPG ya WEBP image chuno");if(f.size>5e6)return toast("Icon 5 MB se chhota chuno");ed.icon=f;ed.iu=URL.createObjectURL(f);$("#icv").innerHTML=`<img src="${ed.iu}">`},
