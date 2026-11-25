@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Amritbharadwaj Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--bg:#F4ECD8;--cd:#FFFAEE;--k:#151515;--m:#6b6354;--ok:#1f8a4c;--bd:#c62828}
+*{box-sizing:border-box;margin:0}
+body{font:500 14px/1.45 Sora,system-ui,sans-serif;background:var(--bg);color:var(--k);padding-bottom:96px}
+h1,h2,h3,b{font-weight:800}h1{font-size:22px}h2{font-size:19px;margin-bottom:12px}h3{margin:16px 0 8px}
+.w{max-width:760px;margin:auto;padding:16px}.m{color:var(--m);font-size:12px}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:16px}
+.c{background:var(--cd);border:2px solid var(--k);border-radius:16px;padding:14px;box-shadow:4px 4px 0 var(--k);margin-bottom:12px}
+.btn{border:2px solid var(--k);background:#fff;color:var(--k);border-radius:12px;padding:8px 12px;font:800 13px Sora,sans-serif;cursor:pointer;box-shadow:3px 3px 0 var(--k);margin:2px}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--k)}.btn.k{background:var(--k);color:var(--bg)}.btn.r{color:var(--bd)}
+.gr{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.gr .c{margin:0}.gr b{font-size:26px;display:block}.gr i{font-size:18px;margin-bottom:6px}
+.ic{width:46px;height:46px;border-radius:12px;border:2px solid var(--k);object-fit:cover;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex:none}
+.rw{display:flex;gap:10px;align-items:center}.fx{flex:1;min-width:0}.fx b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar{height:10px;border:2px solid var(--k);border-radius:8px;background:#fff;margin-top:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--k)}.bar.s i{background:#c9b98f}
+.tag{font-size:11px;font-weight:800;border:2px solid var(--k);border-radius:20px;padding:1px 8px;margin-left:6px}.tag.ok{background:var(--ok);color:#fff;border-color:var(--ok)}.tag.dr{background:#fff}.tag.hi{background:var(--k);color:var(--bg)}
+input,select,textarea{width:100%;border:2px solid var(--k);border-radius:12px;padding:10px;font:500 14px Sora,sans-serif;background:#fff;color:var(--k)}input[type=checkbox]{width:20px;height:20px;accent-color:#151515}
+textarea{min-height:80px}.fl{display:block;font-weight:800;font-size:12px;margin-bottom:10px}.fl input,.fl select,.fl textarea{margin-top:4px;font-weight:500}
+.ch{display:flex;gap:6px;overflow:auto;margin:10px 0}.ch .btn{white-space:nowrap}.ch .on{background:var(--k);color:var(--bg)}
+.sw{position:relative;width:48px;height:28px;flex:none}.sw input{opacity:0;position:absolute;inset:0;z-index:2;cursor:pointer}.sw span{position:absolute;inset:0;border:2px solid var(--k);border-radius:20px;background:#fff}.sw span:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--k);transition:.2s}.sw input:checked+span{background:var(--ok)}.sw input:checked+span:after{left:23px;background:#fff}
+.nv{position:fixed;bottom:0;left:0;right:0;background:var(--k);display:flex;justify-content:space-around;padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:10}
+.nv button{background:none;border:0;color:#cfc7b2;font:800 11px Sora,sans-serif;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:4px 8px}.nv i{font-size:18px}.nv .on{color:#fff}.nv .plus{background:var(--bg);color:var(--k);border-radius:12px}
+.md{position:fixed;inset:0;background:#000a;display:flex;align-items:flex-end;justify-content:center;z-index:20}.md>div{background:var(--bg);width:100%;max-width:680px;max-height:92vh;overflow:auto;border:2px solid var(--k);border-radius:20px 20px 0 0;padding:16px}
+.th{display:flex;gap:6px;flex-wrap:wrap}.th div{position:relative}.th img{width:64px;height:110px;object-fit:cover;border:2px solid var(--k);border-radius:10px}.th button{position:absolute;top:-6px;right:-6px;border:2px solid var(--k);background:#fff;border-radius:50%;width:22px;height:22px;font-weight:800;cursor:pointer}
+.sp{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}
+#t{position:fixed;top:14px;left:50%;transform:translate(-50%,-90px);background:var(--k);color:#fff;padding:10px 18px;border-radius:12px;font-weight:800;z-index:50;transition:.3s}#t.on{transform:translate(-50%,0)}
+.lg{max-width:380px;margin:12vh auto;padding:16px}.lg h1{font-size:28px;margin:6px 0 16px}
+.stp{display:flex;gap:6px;margin-bottom:12px}.stp i{flex:1;height:6px;border-radius:4px;background:#d9cfb5}.stp .on{background:var(--k)}
+.icp{display:flex;position:relative;width:112px;height:112px;border:2px dashed var(--k);border-radius:26px;background:#fff;align-items:center;justify-content:center;text-align:center;cursor:pointer;overflow:hidden;font-size:12px;font-weight:800;margin-bottom:6px}.icp img{width:100%;height:100%;object-fit:cover}
+.lv{background:var(--k);color:#fff;border-radius:18px;padding:16px;margin-bottom:6px}.lv h1{margin:4px 0 8px}
+.tv{border-left:3px solid var(--k);margin-left:8px;padding-left:16px}.ti{position:relative;background:var(--cd);border:2px solid var(--k);border-radius:14px;padding:12px;margin-bottom:10px}.ti:before{content:"";position:absolute;left:-27px;top:16px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--k)}.ti.on{background:#fff;box-shadow:3px 3px 0 var(--ok)}.ti.on:before{background:var(--ok);border-color:var(--ok)}
+details summary{cursor:pointer}details[open] summary{margin-bottom:10px}
+.sw input[type=checkbox]{width:100%;height:100%;margin:0}
+</style></head><body><div id="t"></div><div id="app"></div>
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+import{getAuth,signInWithEmailAndPassword,signOut,onAuthStateChanged}from"https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
+import{getFirestore,collection,getDocs,doc,setDoc,updateDoc,deleteDoc,writeBatch}from"https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+import{Client,Account,Storage,ID}from"https://cdn.jsdelivr.net/npm/appwrite@16.0.2/+esm";
+const FB={apiKey:"AIzaSyA-8Nkiy4AI_A7jaj6uwuH_tYpJzfbdVFY",authDomain:"appstore-4dc4d.firebaseapp.com",projectId:"appstore-4dc4d",storageBucket:"appstore-4dc4d.firebasestorage.app",messagingSenderId:"683110761928",appId:"1:683110761928:web:febf0152daefd0c84a6cfd"};
+const EP="https://sgp.cloud.appwrite.io/v1",PID="6b06681b002d8685a22b",BK="media",NAME="Amritbharadwaj";
+const fa=initializeApp(FB),auth=getAuth(fa),db=getFirestore(fa),ac=new Client().setEndpoint(EP).setProject(PID),acc=new Account(ac),st=new Storage(ac);
+const $=s=>document.querySelector(s),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const img=id=>`${EP}/storage/buckets/${BK}/files/${id}/view?project=${PID}`,num=n=>Number(n||0).toLocaleString("en-IN"),slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const ico=a=>a.iconId?`<img class="ic" src="${img(a.iconId)}">`:`<div class="ic">${esc((a.name||"?")[0])}</div>`;
+const tag=s=>`<span class="tag ${s=="published"?"ok":s=="hidden"?"hi":"dr"}">${s}</span>`;
+let apps=[],V={},tab="home",q="",flt="all",sel=new Set(),ed=null;
+const toast=m=>{const t=$("#t");t.textContent=m;t.classList.add("on");setTimeout(()=>t.classList.remove("on"),2600)};
+const liveData=v=>({liveVersionId:v.id,liveVersionName:v.versionName,liveUrl:v.githubUrl,liveSize:v.fileSize||"",liveLog:v.changelog||""});
+const noLive={liveVersionId:"",liveVersionName:"",liveUrl:"",liveSize:"",liveLog:""};
+const clean=o=>JSON.parse(JSON.stringify(o));
+const close=()=>$("#md")?.remove();
+const modal=h=>{close();const d=document.createElement("div");d.className="md";d.id="md";d.innerHTML=`<div>${h}</div>`;d.onclick=e=>e.target===d&&close();document.body.append(d)};
+const f=(l,i,v="",t="text")=>`<label class="fl">${l}<input id="f_${i}" type="${t}" value="${esc(v)}"></label>`;
+const g=i=>$("#f_"+i).value.trim();
+
+function login(){$("#app").innerHTML=`<div class="lg"><div class="c"><i class="fa-solid fa-lock fa-2x"></i><h1>Admin login</h1>${f("Email","e","","email")}${f("Password","p","","password")}<button class="btn k" style="width:100%;padding:12px" onclick="A.login()"><i class="fa-solid fa-right-to-bracket"></i> Login</button></div></div>`}
+onAuthStateChanged(auth,async u=>{if(!u)return login();try{await acc.get();load()}catch{await signOut(auth);login()}});
+
+async function load(){const s=await getDocs(collection(db,"apps"));apps=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.sortOrder||0)-(b.sortOrder||0));
+await Promise.all(apps.map(async a=>{const v=await getDocs(collection(db,"apps",a.id,"versions"));V[a.id]=v.docs.map(d=>({id:d.id,...d.data()})).sort((x,y)=>(y.versionCode||0)-(x.versionCode||0))}));render()}
+function render(){$("#app").innerHTML=`<div class="w"><div class="hd"><div><div class="m">Welcome, Admin</div><h1>${NAME} <i class="fa-solid fa-hand-peace"></i></h1></div><div><button class="btn" onclick="A.exp()" title="Backup"><i class="fa-solid fa-cloud-arrow-down"></i></button><button class="btn k" onclick="A.out()"><i class="fa-solid fa-right-from-bracket"></i></button></div></div>${{home,apps:list,bulk}[tab]()}</div>
+<nav class="nv">${[["home","fa-chart-pie","Overview"],["apps","fa-grip","Apps"],["bulk","fa-layer-group","Bulk live"]].map(([k,i,l])=>`<button class="${tab==k?"on":""}" onclick="A.go('${k}')"><i class="fa-solid ${i}"></i>${l}</button>`).join("")}<button class="plus" onclick="A.edit()"><i class="fa-solid fa-plus"></i>New app</button></nav>`}
+
+function home(){const t=k=>apps.reduce((s,a)=>s+(+a[k]||0),0),p=apps.filter(a=>a.status=="published").length,mx=Math.max(1,...apps.map(a=>Math.max(a.downloadReal||0,a.downloadShown||0)));
+const S=[["fa-mobile-screen","Total apps",apps.length],["fa-circle-check","Published",p],["fa-pen-ruler","Draft / hidden",apps.length-p],["fa-download","Real downloads",num(t("downloadReal"))],["fa-eye","Shown on site",num(t("downloadShown"))],["fa-code-branch","Versions",Object.values(V).flat().length]];
+return`<div class="gr">${S.map(([i,l,n])=>`<div class="c"><i class="fa-solid ${i}"></i><b>${n}</b><span class="m">${l}</span></div>`).join("")}</div><h3 style="margin-top:20px"><i class="fa-solid fa-ranking-star"></i> Downloads per app</h3>
+${[...apps].sort((a,b)=>(b.downloadReal||0)-(a.downloadReal||0)).map(a=>`<div class="c"><div class="rw">${ico(a)}<div class="fx"><b>${esc(a.name)}</b><span class="m">Live: ${a.liveVersionName?"v"+esc(a.liveVersionName):"none"} ${tag(a.status)}</span></div></div>
+<div class="sp" style="margin-top:8px"><b><i class="fa-solid fa-download"></i> ${num(a.downloadReal)}</b><span class="m">real</span></div><div class="bar"><i style="width:${(a.downloadReal||0)/mx*100}%"></i></div>
+<div class="sp" style="margin-top:6px"><b><i class="fa-solid fa-eye"></i> ${num(a.downloadShown)}</b><span class="m">shown on site</span></div><div class="bar s"><i style="width:${(a.downloadShown||0)/mx*100}%"></i></div></div>`).join("")||`<div class="c">Abhi koi app nahi. <b>New app</b> dabao.</div>`}`}
+
+function cards(){const l=apps.filter(a=>(flt=="all"||a.status==flt)&&(a.name||"").toLowerCase().includes(q.toLowerCase()));
+return l.map(a=>{const lv=a.liveVersionName;return`<div class="c"><div class="rw"><input type="checkbox" ${sel.has(a.id)?"checked":""} onchange="A.pick('${a.id}')">${ico(a)}<div class="fx"><b>${esc(a.name)}</b><span class="m">/${esc(a.slug)} ${tag(a.status)}</span></div>
+<label class="sw"><input type="checkbox" ${a.status=="published"?"checked":""} onchange="A.tog('${a.id}',this.checked)"><span></span></label></div>
+<div class="sp m" style="margin:10px 0"><span><i class="fa-solid fa-code-branch"></i> ${lv?"v"+esc(lv):"no live version"}</span><span><i class="fa-solid fa-download"></i> ${num(a.downloadReal)} real</span><span><i class="fa-solid fa-eye"></i> ${num(a.downloadShown)} shown</span></div>
+<button class="btn" onclick="A.edit('${a.id}')"><i class="fa-solid fa-pen"></i> Edit</button><button class="btn" onclick="A.ver('${a.id}')"><i class="fa-solid fa-code-branch"></i> Versions</button><button class="btn" onclick="A.cp('${esc(a.slug)}')"><i class="fa-solid fa-link"></i> Link</button><button class="btn r" onclick="A.del('${a.id}')"><i class="fa-solid fa-trash"></i></button></div>`}).join("")||`<div class="c">Koi app nahi mila.</div>`}
+function list(){return`<input placeholder="Search app..." value="${esc(q)}" oninput="A.s(this.value)"><div class="ch">${["all","published","draft","hidden"].map(s=>`<button class="btn ${flt==s?"on":""}" onclick="A.f('${s}')">${s}</button>`).join("")}</div>
+${sel.size?`<div class="c"><b>${sel.size} selected</b><br><button class="btn k" onclick="A.bs('published')"><i class="fa-solid fa-rocket"></i> Publish</button><button class="btn" onclick="A.bs('hidden')"><i class="fa-solid fa-eye-slash"></i> Hide</button><button class="btn" onclick="A.bs('draft')">Draft</button><button class="btn r" onclick="A.bdel()"><i class="fa-solid fa-trash"></i> Delete</button></div>`:""}<div id="lst">${cards()}</div>`}
+
+function bulk(){const o=["published","draft","hidden"];return`<h2><i class="fa-solid fa-layer-group"></i> Bulk: version + status</h2><div class="c m">Har app ka version aur status chuno, phir ek baar <b>Apply all</b>.</div><div style="margin-bottom:10px"><button class="btn" onclick="A.all('published')">All → published</button><button class="btn" onclick="A.all('draft')">All → draft</button><button class="btn" onclick="A.all('hidden')">All → hidden</button></div>
+${apps.map(a=>`<div class="c"><div class="rw">${ico(a)}<b class="fx">${esc(a.name)}</b></div><label class="fl" style="margin-top:10px">Live version<select data-v="${a.id}"><option value="">— none —</option>${(V[a.id]||[]).map(v=>`<option value="${v.id}" ${a.liveVersionId==v.id?"selected":""}>v${esc(v.versionName)}</option>`).join("")}</select></label><label class="fl" style="margin:0">Status<select data-s="${a.id}">${o.map(s=>`<option ${a.status==s?"selected":""}>${s}</option>`).join("")}</select></label></div>`).join("")}
+<button class="btn k" style="width:100%;padding:13px" onclick="A.bulk()"><i class="fa-solid fa-check-double"></i> Apply all</button>`}
+
+const okImg=f=>/\.(png|jpe?g|webp)$/i.test(f.name)||/^image\/(png|jpeg|webp)$/.test(f.type);
+const okApk=u=>/^https?:\/\/\S+\.apk(\?\S*)?$/i.test(u)&&!/\/releases\/tag\//.test(u);
+const BADLINK="Link seedha .apk file ka chahiye (…/releases/download/…/app.apk). Release page ya zip ka link nahi chalega";
+const cl=()=>document.querySelectorAll("#md [id^=f_]").forEach(e=>{const k=e.id.slice(2),v=e.type=="checkbox"?e.checked:e.value.trim();if(k=="pub")ed.a.status=v?"published":(ed.a.status=="hidden"?"hidden":"draft");else if(["url","vn","size"].includes(k))ed.v[k]=v;else ed.a[k]=e.type=="number"?+v||0:v});
+const ths=()=>ed.a.screenshots.map((x,i)=>`<div><img src="${img(x)}"><button onclick="A.rs(${i})">×</button></div>`).join("")+ed.su.map((u,i)=>`<div><img src="${u}"><button onclick="A.rn(${i})">×</button></div>`).join("");
+function editor(id){const a=id?{...apps.find(x=>x.id==id)}:{status:"published",downloadShown:0,sortOrder:apps.length+1,rating:0};a.screenshots=[...(a.screenshots||[])];const lv=id&&(V[id]||[]).find(v=>v.id==a.liveVersionId);
+ed={id,a,icon:null,iu:null,shots:[],su:[],rm:[],step:1,v:{id:lv?.id,url:lv?.githubUrl||"",vn:lv?.versionName||"1.0",size:lv?.fileSize||"",log:lv?.changelog||""}};wz()}
+function wz(){const a=ed.a,v=ed.v,s=ed.step;modal(`<div class="stp"><i class="on"></i><i class="${s>1?"on":""}"></i></div><h2>${ed.id?"Edit app":"New app"} · Step ${s} of 2</h2>`+(s==1?`${f("App name *","name",a.name)}${f("Download link * (GitHub release APK)","url",v.url,"url")}${f("Version","vn",v.vn)}${f("Short description","shortDesc",a.shortDesc)}<label class="fl">Full description<textarea id="f_description" style="min-height:170px">${esc(a.description)}</textarea></label>
+<button class="btn k" style="width:100%;padding:13px" onclick="A.nx()">Continue <i class="fa-solid fa-arrow-right"></i></button><button class="btn" style="width:100%;margin-top:8px" onclick="A.close()">Cancel</button>`:`<div class="fl">App icon *</div><div class="icp" onclick="$('#icf').click()"><div id="icv">${ed.iu||a.iconId?`<img src="${ed.iu||img(a.iconId)}">`:'<span><i class="fa-solid fa-image fa-2x"></i><br>Tap to choose</span>'}</div></div><input type="file" id="icf" hidden onchange="A.pi(this)"><input type="file" id="icg" accept="image/*" hidden onchange="A.pi(this)"><button class="btn" onclick="$('#icg').click()"><i class="fa-solid fa-images"></i> Gallery se chuno</button>
+<div class="fl" style="margin-top:12px">Screenshots</div><button class="btn" onclick="$('#shf').click()"><i class="fa-solid fa-folder-open"></i> Files se add</button><button class="btn" onclick="$('#shg').click()"><i class="fa-solid fa-images"></i> Gallery se add</button><input type="file" id="shf" multiple hidden onchange="A.ps(this)"><input type="file" id="shg" accept="image/*" multiple hidden onchange="A.ps(this)"><div class="th" id="th" style="margin:10px 0 14px">${ths()}</div>
+${f("Play Store link","playStoreUrl",a.playStoreUrl,"url")}<h3>Support details</h3>${f("Contact email","contactEmail",a.contactEmail,"email")}${f("Support email","supportEmail",a.supportEmail,"email")}${f("Privacy policy link","privacyUrl",a.privacyUrl,"url")}
+<button class="btn" style="width:100%;margin-bottom:10px" onclick="A.mo()"><i class="fa-solid fa-sliders"></i> More options</button><div class="c" id="mo" style="display:none">${f("App link name (khali = naam se auto)","slug",a.slug)}${f("Category","category",a.category)}${f("File size (18 MB)","size",v.size)}${f("Rating (0-5)","rating",a.rating,"number")}${f("Downloads jo site par dikhenge","downloadShown",a.downloadShown,"number")}<div class="m" style="margin:-4px 0 10px">Asli count: <b>${num(a.downloadReal)}</b> <button class="btn" onclick="$('#f_downloadShown').value=${a.downloadReal||0}">Shown = Real</button></div>${f("Order number (chhota pehle)","sortOrder",a.sortOrder,"number")}</div>
+<label class="rw c"><span class="sw"><input type="checkbox" id="f_pub" ${a.status=="published"?"checked":""}><span></span></span><b>Store par publish karo</b></label>
+<div class="rw"><button class="btn" onclick="A.bk()"><i class="fa-solid fa-arrow-left"></i> Back</button><button class="btn k fx" id="sv" style="padding:13px" onclick="A.save()">Save app</button></div>`))}
+
+function vers(id){const a=apps.find(x=>x.id==id),vs=V[id]||[],li=vs.findIndex(v=>v.id==a.liveVersionId),lv=vs[li];
+modal(`<div class="rw">${ico(a)}<div class="fx"><h2 style="margin:0">${esc(a.name)}</h2><span class="m">Release manager</span></div></div><div class="lv" style="margin-top:12px"><div class="m" style="color:#cfc7b2"><i class="fa-solid fa-circle" style="color:#4ade80;font-size:9px"></i> LIVE ON STORE</div>${lv?`<h1>v${esc(lv.versionName)}</h1><div class="m" style="color:#cfc7b2;margin-bottom:10px">${esc(lv.fileSize||"size n/a")} · ${num(a.downloadReal)} real downloads</div><button class="btn" onclick="A.cpu('${id}')"><i class="fa-solid fa-copy"></i> Copy download link</button>`:`<h1>Koi version live nahi</h1>`}</div>
+<h3><i class="fa-solid fa-rocket"></i> Release new version</h3><div class="c">${f("Version name *","vn")}${f("GitHub release link *","vu","","url")}${f("File size (18 MB)","vs")}<label class="fl">What's new<textarea id="f_vl"></textarea></label><div class="rw" style="margin-bottom:12px"><span class="sw"><input type="checkbox" id="f_vk" checked><span></span></span><b>Release karte hi live karo</b></div><button class="btn k" style="width:100%;padding:12px" onclick="A.addv('${id}')">Release</button></div>
+<h3><i class="fa-solid fa-clock-rotate-left"></i> History</h3><div class="tv">${vs.map((v,i)=>{const on=v.id==a.liveVersionId;return`<div class="ti ${on?"on":""}"><div class="sp"><b>v${esc(v.versionName)}</b>${on?'<span class="tag ok">LIVE</span>':i==0?'<span class="tag dr">Latest</span>':""}</div><div class="m">${v.at?new Date(v.at).toLocaleDateString("en-IN"):""} ${esc(v.fileSize||"")}</div><div class="m">${esc(v.changelog||"")}</div>${on?"":`<button class="btn ${li>=0&&i>li?"":"k"}" onclick="A.live('${id}','${v.id}')">${li>=0&&i>li?"Roll back":"Make live"}</button>`}<button class="btn r" onclick="A.dv('${id}','${v.id}')"><i class="fa-solid fa-trash"></i></button></div>`}).join("")||'<div class="c m">Abhi koi version nahi.</div>'}</div><button class="btn" style="width:100%;margin-top:6px" onclick="A.close()">Close</button>`)}
+
+const A=window.A={ed:null,close,sl:slug,go:t=>{tab=t;render()},s:v=>{q=v;$("#lst").innerHTML=cards()},f:s=>{flt=s;render()},
+ async login(){try{try{await acc.deleteSession("current")}catch{}await acc.createEmailPasswordSession(g("e"),g("p"));await signInWithEmailAndPassword(auth,g("e"),g("p"))}catch(e){toast("Login fail: "+e.message)}},
+ async out(){try{await acc.deleteSession("current")}catch{}await signOut(auth)},
+ pick:id=>{sel.has(id)?sel.delete(id):sel.add(id);render()},
+ async tog(id,on){await updateDoc(doc(db,"apps",id),{status:on?"published":"draft"});toast(on?"Published":"Moved to draft");load()},
+ async bs(s){const b=writeBatch(db);sel.forEach(id=>b.update(doc(db,"apps",id),{status:s}));await b.commit();toast(sel.size+" apps → "+s);sel.clear();load()},
+ async bdel(){if(!confirm(sel.size+" apps delete karein?"))return;for(const id of sel)await A.rm(id);sel.clear();load();toast("Deleted")},
+ async rm(id){const a=apps.find(x=>x.id==id);for(const v of V[id]||[])await deleteDoc(doc(db,"apps",id,"versions",v.id));for(const fid of [a.iconId,...(a.screenshots||[])])if(fid)st.deleteFile(BK,fid).catch(()=>{});await deleteDoc(doc(db,"apps",id))},
+ async del(id){if(confirm("Ye app, uske versions aur images delete ho jayenge. Pakka?")){await A.rm(id);toast("Deleted");load()}},
+ cp(s){let b=localStorage.getItem("base")||prompt("App store site ka URL (jaise https://mystore.pages.dev)");if(!b)return;b=b.replace(/\/$/,"");localStorage.setItem("base",b);navigator.clipboard.writeText(b+"/app/"+s);toast("Link copy ho gaya")},
+ edit(id){editor(id)},
+ mo(){const e=$("#mo");e.style.display=e.style.display=="none"?"block":"none"},
+ nx(){cl();if(!ed.a.name)return toast("App name likho");ed.step=2;wz()},bk(){cl();ed.step=1;wz()},
+ pi(i){const f=i.files[0];i.value="";if(!f)return;if(!okImg(f))return toast("PNG, JPG ya WEBP image chuno");if(f.size>5e6)return toast("Icon 5 MB se chhota chuno");ed.icon=f;ed.iu=URL.createObjectURL(f);$("#icv").innerHTML=`<img src="${ed.iu}">`},
+ ps(i){const all=[...i.files],l=all.filter(okImg);i.value="";if(l.length<all.length)toast("Sirf PNG, JPG, WEBP images liye gaye");ed.shots.push(...l);ed.su.push(...l.map(x=>URL.createObjectURL(x)));$("#th").innerHTML=ths()},
+ rs(i){ed.rm.push(ed.a.screenshots.splice(i,1)[0]);$("#th").innerHTML=ths()},rn(i){ed.shots.splice(i,1);ed.su.splice(i,1);$("#th").innerHTML=ths()},
+ cpu(id){navigator.clipboard.writeText(apps.find(x=>x.id==id).liveUrl);toast("Link copy ho gaya")},
+ async save(){cl();const a=ed.a,v=ed.v;if(!a.name)return toast("App name zaroori hai");const pub=a.status=="published";
+  if(pub&&!okApk(v.url||""))return toast(v.url?BADLINK:"Download link zaroori hai");
+  if(pub&&!ed.icon&&!a.iconId)return toast("App icon zaroori hai");
+  a.slug=slug(a.slug||a.name);if(apps.some(x=>x.slug==a.slug&&x.id!=ed.id))return toast("Ye link name pehle se hai. More options mein badlo");
+  const b=$("#sv");b.disabled=true;b.textContent="Saving...";
+  try{if(ed.icon){const o=a.iconId;a.iconId=(await st.createFile(BK,ID.unique(),ed.icon)).$id;o&&st.deleteFile(BK,o).catch(()=>{})}
+   for(const x of ed.shots)a.screenshots.push((await st.createFile(BK,ID.unique(),x)).$id);
+   ed.rm.forEach(x=>st.deleteFile(BK,x).catch(()=>{}));
+   const{id:_,...d}=a,ref=ed.id?doc(db,"apps",ed.id):doc(collection(db,"apps")),vs=V[ed.id]||[];
+   if(ed.id)delete d.downloadReal;else{d.createdAt=Date.now();d.downloadReal=0;Object.assign(d,noLive)}
+   if(v.url){const vr=v.id?doc(db,"apps",ref.id,"versions",v.id):doc(collection(db,"apps",ref.id,"versions")),old=vs.find(x=>x.id==v.id),vd={versionName:v.vn||"1.0",versionCode:old?.versionCode||Math.max(0,...vs.map(x=>x.versionCode||0))+1,githubUrl:v.url,fileSize:v.size||"",changelog:v.log||"",at:old?.at||Date.now()};
+    await setDoc(vr,vd);Object.assign(d,liveData({id:vr.id,...vd}))}
+   await setDoc(ref,clean(d),{merge:true});close();toast("Saved");load()}catch(e){toast(e.message);b.disabled=false;b.textContent="Save app"}},
+ ver:id=>vers(id),
+ async live(id,vid){await updateDoc(doc(db,"apps",id),liveData(V[id].find(v=>v.id==vid)));await load();vers(id);toast("Version live ho gaya")},
+ async dv(id,vid){if(!confirm("Version delete?"))return;const a=apps.find(x=>x.id==id);await deleteDoc(doc(db,"apps",id,"versions",vid));if(a.liveVersionId==vid)await updateDoc(doc(db,"apps",id),noLive);await load();vers(id)},
+ async addv(id){const n=g("vn"),u=g("vu");if(!n)return toast("Version name likho");if(!okApk(u))return toast(BADLINK);const vs=V[id]||[],r=doc(collection(db,"apps",id,"versions")),d={versionName:n,versionCode:Math.max(0,...vs.map(x=>x.versionCode||0))+1,githubUrl:u,fileSize:g("vs"),changelog:g("vl"),at:Date.now()};
+  await setDoc(r,d);if($("#f_vk").checked)await updateDoc(doc(db,"apps",id),liveData({id:r.id,...d}));await load();vers(id);toast("Version released")},
+ all(s){document.querySelectorAll("[data-s]").forEach(e=>e.value=s)},
+ async bulk(){const b=writeBatch(db);let n=0;apps.forEach(a=>{const v=$(`[data-v="${a.id}"]`).value,s=$(`[data-s="${a.id}"]`).value,u={};if(v!=(a.liveVersionId||""))Object.assign(u,v?liveData(V[a.id].find(x=>x.id==v)):noLive);if(s!=a.status)u.status=s;if(Object.keys(u).length){b.update(doc(db,"apps",a.id),u);n++}});
+  if(!n)return toast("Koi badlav nahi");await b.commit();await load();toast(n+" apps update ho gaye")},
+ exp(){const u=URL.createObjectURL(new Blob([JSON.stringify({apps,versions:V},null,2)],{type:"application/json"})),l=document.createElement("a");l.href=u;l.download="appstore-backup.json";l.click()}};
+window.$=$;
+</script></body></html>
